@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator - مطعم الجنة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --green: #2D5016;
+            --black: #0a0a0a;
+            --dark: #121212;
+            --surface: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #ffffff;
+            --muted: #888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #111;
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: var(--muted);
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: var(--black);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border);
+        }
+
+
+
+        /* ════════════════════════════════════════════════════════════════════
+           SLIDE 1: HERO WITH FOOD IMAGES
+           ════════════════════════════════════════════════════════════════════ */
+        .slide-hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background: linear-gradient(135deg, #0a0f0a 0%, #151515 100%);
+        }
+
+        .hero-info {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.15) 0%, transparent 100%);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .brand img {
+            width: 70px;
+            height: 70px;
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
+        }
+
+        .brand-text {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: var(--gold);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--glass);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .hero-feature i {
+            color: var(--gold);
+            font-size: 1.3rem;
+            width: 28px;
+        }
+
+        .hero-feature span {
+            font-size: 1rem;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+
+        .food-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 30px;
+            transform: rotate(-5deg);
+        }
+
+        .food-card {
+            background: var(--surface);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .food-card:nth-child(2) {
+            transform: translateY(30px);
+        }
+
+        .food-card:nth-child(3) {
+            transform: translateY(-30px);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .food-card-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .food-card-info h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .food-card-info .price {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+        }
+
+
+
+        /* ════════════════════════════════════════════════════════════════════
+           SLIDE 2: FEATURES
+           ════════════════════════════════════════════════════════════════════ */
+        .slide-features {
+            padding: 60px;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--black) 100%);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .features-header h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .features-header h2 span {
+            color: var(--gold);
+        }
+
+        .features-header p {
+            color: var(--muted);
+            font-size: 1.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 45px 35px;
+            text-align: center;
+        }
+
+        .feature-card:nth-child(2) {
+            border-color: var(--gold);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.15);
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: var(--gold);
+        }
+
+        .feature-icon i {
+            font-size: 2.2rem;
+            color: var(--gold);
+        }
+
+        .feature-card:nth-child(2) .feature-icon i {
+            color: #000;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .tech-item i {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        /* ════════════════════════════════════════════════════════════════════
+           SLIDE 3: MOBILE SHOWCASE (WITH IMAGES)
+           ════════════════════════════════════════════════════════════════════ */
+        .slide-mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .mobile-info {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mobile-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            width: fit-content;
+            border: 1px solid var(--gold);
+        }
+
+        .mobile-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .mobile-title span {
+            color: var(--gold);
+        }
+
+        .mobile-desc {
+            color: var(--muted);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .mobile-checks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-check {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.1rem;
+        }
+
+        .mobile-check i {
+            color: #4CAF50;
+            font-size: 1.3rem;
+        }
+
+        .mobile-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .phone-frame {
+            width: 240px;
+            background: #000;
+            border-radius: 40px;
+            border: 8px solid #222;
+            padding: 15px 10px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 22px;
+            background: #222;
+            border-radius: 12px;
+        }
+
+        .phone-frame:first-child {
+            transform: translateY(25px) rotate(-8deg);
+        }
+
+        .phone-frame:last-child {
+            transform: translateY(-25px) rotate(8deg);
+            border-color: var(--gold);
+        }
+
+        .phone-screen {
+            background: var(--surface);
+            border-radius: 20px;
+            overflow: hidden;
+            padding-top: 15px;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .phone-menu-preview {
+            padding: 10px;
+        }
+
+        .phone-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: var(--glass);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .phone-menu-item img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .phone-menu-item h4 {
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+        }
+
+        .phone-menu-item span {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ════════════════════════════════════════════════════════════════════
+           SLIDE 4: MENU SHOWCASE
+           ════════════════════════════════════════════════════════════════════ */
+        .slide-menu {
+            background: url('C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png') center/cover;
+            position: relative;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .menu-header h2 {
+            font-size: 3rem;
+        }
+
+        .menu-header h2 span {
+            color: var(--gold);
+        }
+
+        .menu-header p {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: 1.15rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .menu-item {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            border-color: var(--gold);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            margin-bottom: 18px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .menu-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-item .price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .menu-categories {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .category-tag {
+            background: var(--surface);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>📸 Portfolio Generator</h1>
+        <p>التقط Screenshots لهذه الشرائح واستخدمها في معرض أعمالك</p>
+    </header>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: HERO -->
+        <div class="slide slide-hero">
+
+
+            <div class="hero-info">
+                <div class="brand">
+                    <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/new_restaurant_logo_1769854570557.png"
+                        alt="Logo">
+                    <span class="brand-text">مطعم الجنة</span>
+                </div>
+
+                <h1 class="hero-title">
+                    صفحة هبوط<br>
+                    <span>لمطعم سعودي</span>
+                </h1>
+
+                <p class="hero-desc">
+                    واجهة مستخدم فاخرة بتصميم Glassmorphism عصري، مع نظام سلة تسوق ومفضلة متكامل.
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>سلة تسوق ذكية مع حفظ محلي</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>قائمة المفضلة للأطباق المختارة</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>متجاوب 100% على جميع الأجهزة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="food-showcase">
+                    <div class="food-card">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kabsa_dish_1769853305923.png"
+                            alt="كبسة">
+                        <div class="food-card-info">
+                            <h3>كبسة دجاج</h3>
+                            <span class="price">45 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mandi_dish_1769853320453.png"
+                            alt="مندي">
+                        <div class="food-card-info">
+                            <h3>مندي لحم</h3>
+                            <span class="price">65 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/shawarma_dish_1769853335948.png"
+                            alt="شاورما">
+                        <div class="food-card-info">
+                            <h3>شاورما</h3>
+                            <span class="price">35 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png"
+                            alt="كنافة">
+                        <div class="food-card-info">
+                            <h3>كنافة</h3>
+                            <span class="price">20 ر.س</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- SLIDE 2: FEATURES -->
+        <div class="slide slide-features">
+
+
+            <div class="features-header">
+                <h2>مميزات <span>احترافية</span></h2>
+                <p>كل ما تحتاجه لمشروع ناجح في مكان واحد</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3>سلة تسوق ذكية</h3>
+                    <p>إضافة وحذف المنتجات مع حساب تلقائي للمجموع وحفظ محلي</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>قائمة المفضلة</h3>
+                    <p>حفظ الأطباق المفضلة والعودة إليها لاحقاً بضغطة زر</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>فلترة ديناميكية</h3>
+                    <p>تصفح الأطباق حسب الفئة بسهولة وسرعة</p>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>LocalStorage</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: MOBILE -->
+        <div class="slide slide-mobile">
+
+
+            <div class="mobile-info">
+                <span class="mobile-badge">📱 Mobile First</span>
+
+                <h2 class="mobile-title">
+                    متجاوب على<br>
+                    <span>جميع الأجهزة</span>
+                </h2>
+
+                <p class="mobile-desc">
+                    تصميم Mobile-First يضمن تجربة مستخدم مثالية لعملائك على الجوال والتابلت والكمبيوتر.
+                </p>
+
+                <div class="mobile-checks">
+                    <div class="mobile-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>قائمة Hamburger احترافية</span>
+                    </div>
+                    <div class="mobile-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سلة تسوق بملء الشاشة</span>
+                    </div>
+                    <div class="mobile-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>أداء سريع وتحميل فوري</span>
+                    </div>
+                    <div class="mobile-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تجربة لمس سلسة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-visual">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png"
+                            alt="Hero" style="height: 150px; object-fit: cover;">
+                        <div class="phone-menu-preview">
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kabsa_dish_1769853305923.png"
+                                    alt="">
+                                <div>
+                                    <h4>كبسة دجاج</h4>
+                                    <span>45 ر.س</span>
+                                </div>
+                            </div>
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mandi_dish_1769853320453.png"
+                                    alt="">
+                                <div>
+                                    <h4>مندي لحم</h4>
+                                    <span>65 ر.س</span>
+                                </div>
+                            </div>
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/shawarma_dish_1769853335948.png"
+                                    alt="">
+                                <div>
+                                    <h4>شاورما</h4>
+                                    <span>35 ر.س</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="phone-menu-preview" style="padding-top: 20px;">
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mixed_grill_1769854585342.png"
+                                    alt="">
+                                <div>
+                                    <h4>مشاوي مشكلة</h4>
+                                    <span>85 ر.س</span>
+                                </div>
+                            </div>
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hummus_dish_1769853352686.png"
+                                    alt="">
+                                <div>
+                                    <h4>حمص</h4>
+                                    <span>15 ر.س</span>
+                                </div>
+                            </div>
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/falafel_dish_1769853366881.png"
+                                    alt="">
+                                <div>
+                                    <h4>فلافل</h4>
+                                    <span>12 ر.س</span>
+                                </div>
+                            </div>
+                            <div class="phone-menu-item">
+                                <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png"
+                                    alt="">
+                                <div>
+                                    <h4>كنافة</h4>
+                                    <span>20 ر.س</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: MENU -->
+        <div class="slide slide-menu">
+
+
+            <div class="menu-content">
+                <div class="menu-header">
+                    <h2>قائمة <span>الطعام</span></h2>
+                    <p>أكثر من 25 صنف متنوع بجودة عالية</p>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kabsa_dish_1769853305923.png"
+                            alt="كبسة">
+                        <h3>كبسة دجاج</h3>
+                        <div class="price">45 ر.س</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mandi_dish_1769853320453.png"
+                            alt="مندي">
+                        <h3>مندي لحم</h3>
+                        <div class="price">65 ر.س</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mixed_grill_1769854585342.png"
+                            alt="مشاوي">
+                        <h3>مشاوي مشكلة</h3>
+                        <div class="price">85 ر.س</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png"
+                            alt="كنافة">
+                        <h3>كنافة نابلسية</h3>
+                        <div class="price">20 ر.س</div>
+                    </div>
+                </div>
+
+                <div class="menu-categories">
+                    <span class="category-tag">🍖 أطباق رئيسية</span>
+                    <span class="category-tag">🥙 مقبلات</span>
+                    <span class="category-tag">🥗 سلطات</span>
+                    <span class="category-tag">☕ مشروبات</span>
+                    <span class="category-tag">🍰 حلويات</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
