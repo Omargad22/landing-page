@@ -308,7 +308,7 @@ button {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: url('C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png') center/cover no-repeat;
+    background: url('../images/hero_background_1769853292443.png') center/cover no-repeat;
 }
 
 .hero-overlay {

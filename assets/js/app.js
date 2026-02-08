@@ -9,7 +9,7 @@ const menuData = [
         category: 'main',
         price: 45,
         description: 'كبسة دجاج مع الأرز البسمتي المعطر بالزعفران والمكسرات',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kabsa_dish_1769853305923.png'
+        image: 'assets/images/kabsa_dish_1769853305923.png'
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const menuData = [
         category: 'main',
         price: 65,
         description: 'مندي لحم طري مع الأرز الأصفر المدخن واللوز',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mandi_dish_1769853320453.png'
+        image: 'assets/images/mandi_dish_1769853320453.png'
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const menuData = [
         category: 'main',
         price: 25,
         description: 'شاورما دجاج أو لحم طازجة مع الخضار والصلصات',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/shawarma_dish_1769853335948.png'
+        image: 'assets/images/shawarma_dish_1769853335948.png'
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const menuData = [
         category: 'main',
         price: 85,
         description: 'مشاوي مشكلة من الدجاج واللحم والكفتة مع الخضار المشوية',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mixed_grill_1769854585342.png'
+        image: 'assets/images/mixed_grill_1769854585342.png'
     },
     {
         id: 5,
@@ -41,7 +41,7 @@ const menuData = [
         category: 'main',
         price: 50,
         description: 'مقلوبة دجاج مع الأرز والباذنجان والقرنبيط',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/maqluba_1769854599420.png'
+        image: 'assets/images/maqluba_1769854599420.png'
     },
     {
         id: 6,
@@ -49,7 +49,7 @@ const menuData = [
         category: 'main',
         price: 42,
         description: 'صدور دجاج مشوية مع الأعشاب والأرز والخضار',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/grilled_chicken_1769854684408.png'
+        image: 'assets/images/grilled_chicken_1769854684408.png'
     },
     {
         id: 7,
@@ -57,7 +57,7 @@ const menuData = [
         category: 'main',
         price: 48,
         description: 'برياني دجاج هندي معطر بالبهارات والزعفران',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/maqluba_1769854599420.png'
+        image: 'assets/images/maqluba_1769854599420.png'
     },
     {
         id: 8,
@@ -65,7 +65,7 @@ const menuData = [
         category: 'main',
         price: 75,
         description: 'ريش غنم مشوية مع إكليل الجبل والبطاطس المحمرة',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/mixed_grill_1769854585342.png'
+        image: 'assets/images/mixed_grill_1769854585342.png'
     },
 
     // Appetizers
@@ -75,7 +75,7 @@ const menuData = [
         category: 'appetizer',
         price: 15,
         description: 'حمص كريمي مع زيت الزيتون والبهارات وخبز ساخن',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hummus_dish_1769853352686.png'
+        image: 'assets/images/hummus_dish_1769853352686.png'
     },
     {
         id: 10,
@@ -83,7 +83,7 @@ const menuData = [
         category: 'appetizer',
         price: 18,
         description: 'فلافل مقرمشة مع الخضار الطازجة والطحينة',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/falafel_dish_1769853366881.png'
+        image: 'assets/images/falafel_dish_1769853366881.png'
     },
     {
         id: 11,
@@ -91,7 +91,7 @@ const menuData = [
         category: 'appetizer',
         price: 16,
         description: 'بابا غنوج كريمي مع الباذنجان المدخن والطحينة',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/baba_ghanoush_1769854640552.png'
+        image: 'assets/images/baba_ghanoush_1769854640552.png'
     },
     {
         id: 12,
@@ -99,7 +99,7 @@ const menuData = [
         category: 'appetizer',
         price: 22,
         description: 'سمبوسك مقرمش محشي باللحم أو الجبن',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/sambousek_1769854654202.png'
+        image: 'assets/images/sambousek_1769854654202.png'
     },
     {
         id: 13,
@@ -107,7 +107,7 @@ const menuData = [
         category: 'appetizer',
         price: 28,
         description: 'كبة مقلية محشوة باللحم مع صلصة اللبن',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kibbeh_1769854670786.png'
+        image: 'assets/images/kibbeh_1769854670786.png'
     },
     {
         id: 14,
@@ -115,7 +115,7 @@ const menuData = [
         category: 'appetizer',
         price: 24,
         description: 'ورق عنب محشي بالأرز واللحم والتوابل',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/sambousek_1769854654202.png'
+        image: 'assets/images/sambousek_1769854654202.png'
     },
 
     // Salads
@@ -125,7 +125,7 @@ const menuData = [
         category: 'salad',
         price: 18,
         description: 'سلطة تبولة طازجة بالبقدونس والطماطم والبرغل',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/tabbouleh_1769854613293.png'
+        image: 'assets/images/tabbouleh_1769854613293.png'
     },
     {
         id: 16,
@@ -133,7 +133,7 @@ const menuData = [
         category: 'salad',
         price: 20,
         description: 'سلطة فتوش مع الخضار المشكلة والخبز المحمص',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/fattoush_1769854626923.png'
+        image: 'assets/images/fattoush_1769854626923.png'
     },
     {
         id: 17,
@@ -141,7 +141,7 @@ const menuData = [
         category: 'salad',
         price: 22,
         description: 'سلطة يونانية بالجبنة البيضاء والزيتون الأسود',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/baba_ghanoush_1769854640552.png'
+        image: 'assets/images/baba_ghanoush_1769854640552.png'
     },
     {
         id: 18,
@@ -149,7 +149,7 @@ const menuData = [
         category: 'salad',
         price: 25,
         description: 'سلطة سيزر مع الدجاج المشوي وصلصة السيزر',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/grilled_chicken_1769854684408.png'
+        image: 'assets/images/grilled_chicken_1769854684408.png'
     },
 
     // Beverages
@@ -159,7 +159,7 @@ const menuData = [
         category: 'beverage',
         price: 12,
         description: 'عصير برتقال طبيعي طازج من البرتقال الطازج',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png'
+        image: 'assets/images/hero_background_1769853292443.png'
     },
     {
         id: 20,
@@ -167,7 +167,7 @@ const menuData = [
         category: 'beverage',
         price: 14,
         description: 'عصير مانجو استوائي منعش',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png'
+        image: 'assets/images/hero_background_1769853292443.png'
     },
     {
         id: 21,
@@ -175,7 +175,7 @@ const menuData = [
         category: 'beverage',
         price: 10,
         description: 'ليموناضة منعشة بالنعناع الطازج',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png'
+        image: 'assets/images/hero_background_1769853292443.png'
     },
     {
         id: 22,
@@ -183,7 +183,7 @@ const menuData = [
         category: 'beverage',
         price: 8,
         description: 'شاي عربي تقليدي بالنعناع الطازج',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png'
+        image: 'assets/images/hero_background_1769853292443.png'
     },
     {
         id: 23,
@@ -191,7 +191,7 @@ const menuData = [
         category: 'beverage',
         price: 10,
         description: 'قهوة عربية أصيلة بنكهة الهيل',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/hero_background_1769853292443.png'
+        image: 'assets/images/hero_background_1769853292443.png'
     },
     {
         id: 24,
@@ -199,7 +199,7 @@ const menuData = [
         category: 'beverage',
         price: 15,
         description: 'كابتشينو إيطالي فاخر',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png'
+        image: 'assets/images/kunafa_dessert_1769853381817.png'
     },
 
     // Desserts
@@ -209,7 +209,7 @@ const menuData = [
         category: 'dessert',
         price: 20,
         description: 'كنافة ذهبية مع الجبن والقطر والفستق الحلبي',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png'
+        image: 'assets/images/kunafa_dessert_1769853381817.png'
     },
     {
         id: 26,
@@ -217,7 +217,7 @@ const menuData = [
         category: 'dessert',
         price: 18,
         description: 'بقلاوة محشوة بالفستق والعسل',
-        image: 'C:/Users/omarg/.gemini/antigravity/brain/98eb53a5-34b1-4616-ada5-b5831606f63f/kunafa_dessert_1769853381817.png'
+        image: 'assets/images/kunafa_dessert_1769853381817.png'
     }
 ];
 
@@ -471,106 +471,81 @@ function toggleMobileMenu() {
 // ========================================
 // Event Listeners
 // ========================================
-cartBtn.addEventListener('click', openCart);
-wishlistBtn.addEventListener('click', openWishlist);
-closeCartBtn.addEventListener('click', closeCart);
-closeWishlistBtn.addEventListener('click', closeWishlist);
-overlay.addEventListener('click', () => {
+// ========================================
+// Event Listeners
+// ========================================
+if (cartBtn) cartBtn.addEventListener('click', openCart);
+if (wishlistBtn) wishlistBtn.addEventListener('click', openWishlist);
+if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+if (closeWishlistBtn) closeWishlistBtn.addEventListener('click', closeWishlist);
+if (overlay) overlay.addEventListener('click', () => {
     closeCart();
     closeWishlist();
 });
 
-hamburger.addEventListener('click', toggleMobileMenu);
+if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
 
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
     });
 });
 
 // Menu filters
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.category;
-        renderMenu(currentFilter);
+if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.category;
+            renderMenu(currentFilter);
+        });
     });
-});
+}
 
 // Checkout button
-checkoutBtn.addEventListener('click', () => {
-    if (cart.length === 0) {
-        showToast('السلة فارغة');
-        return;
-    }
+if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            showToast('السلة فارغة');
+            return;
+        }
 
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const message = `شكراً لطلبك! المبلغ الإجمالي: ${total} ر.س`;
-    showToast(message);
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const message = `شكراً لطلبك! المبلغ الإجمالي: ${total} ر.س`;
+        showToast(message);
 
-    // In a real application, this would redirect to checkout
-    setTimeout(() => {
-        cart = [];
-        saveCart();
-        updateCartUI();
-        closeCart();
-    }, 2000);
-});
+        // In a real application, this would redirect to checkout
+        setTimeout(() => {
+            cart = [];
+            saveCart();
+            updateCartUI();
+            closeCart();
+        }, 2000);
+    });
+}
 
-// Active nav link on scroll
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
     const navbar = document.querySelector('.navbar');
-
-    // Add scrolled class to navbar
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
-
-    // Update active nav link
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offset = 80; // navbar height
-            const targetPosition = target.offsetTop - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
 });
 
 // ========================================
 // Initialize
 // ========================================
 function init() {
-    renderMenu();
+    if (menuGrid) {
+        renderMenu();
+    }
     updateCartUI();
     updateWishlistUI();
 }
